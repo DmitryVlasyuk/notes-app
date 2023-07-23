@@ -6,7 +6,7 @@ import update from 'react-addons-update';
 
 const initialState: NoteDto[] = [{
     id: 0 as number,
-    text: 'Edit me'
+    text: '#Edit me',
 }]
 
 function nextNoteId(notes: NoteDto[]) {
@@ -35,9 +35,9 @@ const notesReducer = (state = initialState, action: { type: string, payload: Not
                 }
             )
 
-        case "LISTITEM_DELETE": 
+        case "LISTITEM_DELETE":
             return state.filter((note) => note.id !== action.payload.id)
-        
+
 
         default: return state;
     };

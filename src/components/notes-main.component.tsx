@@ -1,15 +1,18 @@
 import { Grid } from "@mui/material";
 import NotesAdd from "./notes-add.component";
-import NotesSearch from "./notes-search.component";
-import NotesDisplay from "./notes.component";
+import NotesLayout from "./notes-layout.component";
+import NotesDisplay from "./notes-layout.component";
+import NotesTags from "./notes-tags.components";
 
 export default function NotesMain() {
 
   return (
-    <Grid container>
-      <NotesSearch />
-      <NotesAdd />
-      <NotesDisplay />
+    <Grid container direction="column" alignItems="center" justifyContent="center">
+      <Grid>
+        <NotesAdd />
+      </Grid>
+      <NotesLayout />
+      {/* <NotesDisplay /> */}
     </Grid>
   )
 }
