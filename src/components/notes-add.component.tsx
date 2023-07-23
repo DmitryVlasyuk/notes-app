@@ -28,8 +28,8 @@ export default function NotesAdd() {
                     if (!inputValue) return;
                     console.log(extractTags(inputValue))
                     const tags = extractTags(inputValue)
-                    tags.map(tag =>{
-                        dispatch(addTag({text: tag}))
+                    tags.map(tag => {
+                        dispatch(addTag({ id:0, text: tag.toLowerCase() }))
                     })
                     dispatch(addItem({ id: 0, text: inputValue }
 
