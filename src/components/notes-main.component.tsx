@@ -6,7 +6,7 @@ export default function NotesMain() {
 
   return (
     <Grid container direction="column" alignItems="center" justifyContent="center">
-      <Grid>
+      <Grid marginTop={'30px'} marginBottom={'10px'}>
         <NotesAdd />
       </Grid>
       <NotesLayout />

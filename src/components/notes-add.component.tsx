@@ -1,3 +1,5 @@
+import { Textarea } from "@mui/joy";
+import { Box, Grid } from "@mui/material";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem } from "../app/notes/store/notes.actions";
@@ -15,31 +17,39 @@ export default function NotesAdd() {
         return tags || []
     };
     return (
-        <>
-            <input
+        <Grid container direction="row">
+            <Textarea
+                required
                 placeholder="Add todo item"
                 value={inputValue}
+                sx={{width: '500px'}}
+                onKeyDown={(e) => {
+                    if (e.key === 'Enter' && e.shiftKey === false) {
+                        e.preventDefault()
+                        if (!inputValue) return;
+                        console.log(extractTags(inputValue))
+                        const tags = extractTags(inputValue)
+                        tags.map(tag => {
+                            dispatch(addTag({ id: 0, text: tag.toLowerCase() }))
+                        })
+                        dispatch(addItem({ id: 0, text: inputValue }
+
+                        ));
+                        setInputValue("");
+                    }
+                }}
                 onChange={(e) => {
                     setInputValue(e.target.value)
                 }}
             />
-            <button
+            {/* <button
                 onClick={() => {
-                    if (!inputValue) return;
-                    console.log(extractTags(inputValue))
-                    const tags = extractTags(inputValue)
-                    tags.map(tag => {
-                        dispatch(addTag({ id:0, text: tag.toLowerCase() }))
-                    })
-                    dispatch(addItem({ id: 0, text: inputValue }
-
-                    ));
-                    setInputValue("");
+                    
                 }}
             >
-                +
-            </button>
-        </>
+                ADD
+            </button> */}
+        </Grid>
     )
 }
 

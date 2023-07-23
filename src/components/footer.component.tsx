@@ -8,12 +8,12 @@ export default function Footer() {
     return (
         <Grid
             container
-            position="absolute"
+            position="sticky"
             sx={{
                 padding: '10px 10px',
                 bgcolor: '#DAAD86',
                 textAlign: 'center',
-                margin: '0 auto',
+                margin: 'auto',
                 bottom: '0'
             }}
         >

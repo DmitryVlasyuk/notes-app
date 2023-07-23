@@ -9,7 +9,7 @@ export default function NotesPage() {
         <Grid container>
             <Header />
             <NotesMain />
-            <Footer />
+            {/* <Footer /> */}
         </Grid>
     );
 }
