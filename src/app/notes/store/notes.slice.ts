@@ -6,7 +6,7 @@ import update from 'react-addons-update';
 
 const initialState: NoteDto[] = [{
     id: 0 as number,
-    text: '#Edit me',
+    text: '#edit me',
 }]
 
 function nextNoteId(notes: NoteDto[]) {

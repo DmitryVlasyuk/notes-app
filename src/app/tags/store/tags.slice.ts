@@ -1,4 +1,8 @@
 import update from 'react-addons-update';
+import { useSelector } from 'react-redux';
+import { store } from '../../../store';
+import { NoteDto } from '../../notes/types/note-dto.type';
+import { NotesState } from '../../notes/types/note-state.type';
 import { TagDto } from '../types/tag-dto.type';
 
 
@@ -11,6 +15,7 @@ function nextTagId(notes: TagDto[]) {
     const maxId = notes.reduce((maxId, note) => Math.max(note.id, maxId), -1)
     return maxId + 1
 }
+
 
 const tagsReducer = (state = initialState, action: { type: string, payload: TagDto }) => {
     switch (action.type) {
@@ -28,14 +33,15 @@ const tagsReducer = (state = initialState, action: { type: string, payload: TagD
 
         };
 
-            case "TAG_LIST":
-                return [
-                    ...state,
-                    action.payload
-                ];
+        // case "TAG_LIST":
+        //     return [
+        //         ...state,
+        //         action.payload
+        //     ];
 
-        //     case "LISTITEM_DELETE":
-        //         return state.filter((note) => note.id !== action.payload.id)
+        case "TAG_DELETE": {
+            return state.filter((tag) => tag.text !== action.payload.text)
+        }
 
 
         default: return state;
