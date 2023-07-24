@@ -1,4 +1,3 @@
-import { NoteDto } from "../../notes/types/note-dto.type";
 import { TagDto } from "../types/tag-dto.type";
 
 export function addTag(payload: TagDto) {
@@ -7,13 +6,6 @@ export function addTag(payload: TagDto) {
     payload
   };
 };
-
-// export function tagList(payload: TagDto[]) {
-//   return {
-//     type: "TAG_LIST",
-//     payload
-//   };
-// };
 
 export function tagDelete(payload: TagDto) {
   return {

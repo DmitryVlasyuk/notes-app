@@ -30,10 +30,4 @@ function loadFromLocalStorage() {
 }
 
 export const store = configureStore({ reducer: rootReducer, preloadedState: loadFromLocalStorage() });
-// export const store = setupStore;
 store.subscribe(() => saveToLocalStorage(store.getState()));
-
-
-// export type RootState = ReturnType<typeof rootReducer>;
-// export type AppStore = ReturnType<typeof setupStore>;
-// export type AppDispatch = AppStore['dispatch'];

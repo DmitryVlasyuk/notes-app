@@ -10,7 +10,6 @@ export default function NotesMain() {
         <NotesAdd />
       </Grid>
       <NotesLayout />
-      {/* <NotesDisplay /> */}
     </Grid>
   )
 }

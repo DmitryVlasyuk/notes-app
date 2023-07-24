@@ -1,5 +1,3 @@
-// import { createSlice } from "@reduxjs/toolkit";
-
 import { NoteDto } from "../types/note-dto.type";
 import update from 'react-addons-update';
 
